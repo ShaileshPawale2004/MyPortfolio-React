@@ -1,0 +1,105 @@
+/* Theme Switcher Box */
+.style-switcher {
+    position: fixed;
+    top: 20px;  /* Moves it higher above the profile image */
+    right: 0;
+    width: 250px; /* Increased width to fit all colors in one row */
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    z-index: 101;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    transform: translateX(100%); /* Hidden by default */
+    padding: 10px; /* Reduced padding */
+    height: 130px; /* Reduced height */
+}
+
+/* When Open, Slide-In from Right */
+.style-switcher.open {
+    transform: translateX(-10px);
+}
+
+/* Gear Icon (Always Visible) */
+.s-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    left: -50px; /* Moves the gear icon outside */
+    top: 10px;
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark/Light Mode Toggle */
+.day-night {
+    position: absolute;
+    top: 60px;
+    left: -50px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    border: 1px solid var(--bg-black-50);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Theme Box Content */
+.switcher-panel {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Theme Colors */
+.colors {
+    display: flex;
+    justify-content: space-between; /* Ensures all colors stay in one row */
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+/* Color Circles */
+.colors span {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Gear icon should rotate continuously when switcher is closed */
+  .style-switcher .s-icon {
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Stop rotation when the switcher is open */
+  .style-switcher.open .s-icon {
+    animation: none;
+  }
+  
+
+  
